@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.asija.assignment.ui.fragments.HomeViewModel" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/bg_color"
+        >
+        
+        <RelativeLayout android:id="@+id/rlToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:elevation="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/white"
+            >
+
+            <ImageView android:id="@+id/ivMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_outline_menu_24"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/women"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:layout_toEndOf="@id/ivMenu"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                >
+                <ImageView android:id="@+id/ivSearch"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_search"
+                    />
+                <ImageView android:id="@+id/ivLike"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/ivSearch"
+                    android:src="@drawable/ic_heart"
+                    />
+                <ImageView android:id="@+id/ivBag"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/ivLike"
+                    android:src="@drawable/ic_bag"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/rlToolbar"
+            app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_shopping"
+            />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            />
+
+    </RelativeLayout>
+</layout>

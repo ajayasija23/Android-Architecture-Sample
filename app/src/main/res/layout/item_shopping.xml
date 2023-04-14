@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="com.asija.assignment.model.Product" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_bg"
+        android:layout_margin="4dp">
+
+        <ImageView android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/shopping"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="2dp"
+            />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.title}"
+            android:layout_below="@id/ivImage"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.description}"
+            android:layout_below="@id/tvTitle"
+            android:textColor="@color/text_light"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/tvCurrentPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rs"
+            android:layout_below="@id/tvDesc"
+            android:textColor="@color/black"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:textSize="10sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDesc"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/tvCurrentPrice"
+            >
+
+            <TextView
+                android:id="@+id/tvOriginalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹.200"
+                android:textSize="10sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/text_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.1dp"
+                android:background="@color/text_light"
+                app:layout_constraintTop_toTopOf="@id/tvOriginalPrice"
+                app:layout_constraintBottom_toBottomOf="@id/tvOriginalPrice"
+                app:layout_constraintStart_toStartOf="@id/tvOriginalPrice"
+                app:layout_constraintEnd_toEndOf="@id/tvOriginalPrice"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save ₹.144 (20%)"
+            android:textSize="10sp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/tvDesc"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/text_light"/>
+
+
+    </RelativeLayout>
+
+
+</layout>

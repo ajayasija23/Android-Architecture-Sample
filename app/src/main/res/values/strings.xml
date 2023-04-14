@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pixel Soft Assignment</string>
+    <string name="title">Title</string>
+    <string name="accessibility_service_label">Whatsapp Track Service</string>
+    <string name="accessibility_service_description">AccessibilityService</string>
+    <string name="enable_whatsapp_tracking">Enable Whatsapp Tracking</string>
+    <string name="women">Women</string>
+    <string name="rs">₹.</string>
+</resources>
